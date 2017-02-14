@@ -75,7 +75,9 @@ class CurlFactory implements CurlFactoryInterface
             curl_setopt($resource, CURLOPT_READFUNCTION, null);
             curl_setopt($resource, CURLOPT_WRITEFUNCTION, null);
             curl_setopt($resource, CURLOPT_PROGRESSFUNCTION, null);
-            curl_reset($resource);
+           // curl_reset($resource);
+            curl_setopt($resource, CURLOPT_HTTPGET, 1);
+            curl_setopt($resource, CURLOPT_POST, false);
             $this->handles[] = $resource;
         }
     }
